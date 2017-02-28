@@ -2,7 +2,7 @@
   <div ng-controller="todoCtrl">
     <h1>Things I must do</h1>
     <ul>
-      <li ng-repeat="task in tasks track by $index" ng-click="completeTask(task)">
+      <li ng-repeat="task in tasks track by $index" ng-click="completeTask(task)" ng-if="! task.completed">
         <p>Name: {{task.name}}</p>
         <p>Priority: {{task.priority}}</p>
         <p>Completed: {{task.completed}}</p>
