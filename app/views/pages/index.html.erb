@@ -2,13 +2,19 @@
   <div ng-controller="todoCtrl">
     <h1>Things I must do</h1>
     <ul>
-      <li ng-repeat="task in tasks">
-        {{task}}
+      <li ng-repeat="task in tasks track by $index" ng-click="completeTask(task)">
+        <p>Name: {{task.name}}</p>
+        <p>Priority: {{task.priority}}</p>
+        <p>Completed: {{task.completed}}</p>
+        
       </li>
     </ul>
     <div>
-      Add Task: <input ng-model="newTask">
-      <button ng-click="addTask(newTask)">Add Task</button>
+      Add Task: 
+      <p>Name: <input ng-model="newTaskName"></p>
+      <p>Priority: <input ng-model="newTaskPriority"></p>
+      <button ng-click="addTask(newTaskName, newTaskPriority)">Add Task</button>
     </div>
+
   </div>
 </div>
