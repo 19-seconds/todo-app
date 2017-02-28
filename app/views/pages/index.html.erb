@@ -1,13 +1,14 @@
 <div ng-app="app">
   <div ng-controller="todoCtrl">
-  <h1>Things I must do</h1>
-  <ul>
-    <li ng-repeat="task in tasks">
-      <p>{{task}}</p>
-      <input ng-model="task">
-    </li>
-  </ul>
-  <div>
-  </div>
+    <h1>Things I must do</h1>
+    <ul>
+      <li ng-repeat="task in tasks">
+        {{task}}
+      </li>
+    </ul>
+    <div>
+      Add Task: <input ng-model="newTask">
+      <button ng-click="addTask(newTask)">Add Task</button>
+    </div>
   </div>
 </div>
